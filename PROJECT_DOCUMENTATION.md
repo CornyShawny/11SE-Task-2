@@ -68,3 +68,32 @@ A use case in software development is a structured description of how a user (or
 ## **Build and Test**
 
 ## **Review**
+
+## **Launch**
+
+# **Sprint 2**
+## **Design**
+
+## **Build and Test**
+
+## **Review**
+
+## **Launch**
+
+# **Sprint 3**
+## **Design**
+
+## **Build and Test**
+
+## **Review**
+
+## **Launch**
+
+# **Sprint 4**
+## **Design**
+
+## **Build and Test**
+
+## **Review**
+
+## **Launch**
