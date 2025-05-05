@@ -1,4 +1,4 @@
-# **11SE Task 2 2025**
+# **11SE Task 2 2025 - Typing Speed Tester**
 ### By Shawn
 
 # **Sprint 1**
@@ -6,11 +6,14 @@
 ### **Functional Requirements**
 Consider the following elements when developing your functional requirements.
 
-- **Data Retrieval:** What does the user need to be able to view in the system? 
+- **Data Retrieval:** What does the user need to be able to view in the system?
+The user needs to be able to view the randomised words for the typing test and their input as they type them which will end after the chosen amount of words are typed. The system should take the data of how much time the user took to type those words in the typing test and then calculate the words per minute.
 
 - **User Interface:** What is required for the user to interact with the system?
+The user should be able to view and type out the randomised words and interact with the button to try it again. There will also be an option to change how many words the user wants in the speed test. If there is an error made while typing, the user cannot progress until the error is resolved (they type the right character). There should also be an exit button either on the user interface or just on the window to exit the application.
 
 - **Data Display:** What information does the user need to obtain from the system? What needs to be output for the user?
+The user needs to be able to view their words per minute result after finishing the typing test, the amount of words they chose, as well as the time taken to type it.
 
 ### **Non-Functional Requirements**
 Consider the following elements when developing your non-functional requirements:
