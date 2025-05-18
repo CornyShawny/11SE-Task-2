@@ -40,6 +40,8 @@ What does the system actually NEED to do?
 - **User Requirements**
     - What does the user need to be able to do? List all specifications here.
 
+The user needs to be able to input/type letters of the given words into the system to be able to complete the typing test
+
 - **Inputs & Outputs**
     - What inputs will the system need to accept and what outputs will it need to display?
 
