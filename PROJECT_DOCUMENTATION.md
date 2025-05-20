@@ -40,19 +40,27 @@ What does the system actually NEED to do?
 - **User Requirements**
     - What does the user need to be able to do? List all specifications here.
 
-The user needs to be able to input/type letters of the given words into the system to be able to complete the typing test
+The user needs to be able to input/type letters of the given words into the system to be able to complete the typing test. The user also needs to be able to exit the application either by clicking on the exit button for the window, or click on a designated/custom button. They should be able to restart the typing test whenever they need (during or after the test).
 
 - **Inputs & Outputs**
     - What inputs will the system need to accept and what outputs will it need to display?
 
+The system should accept keyboard inputs that the user types to do the typing test, as well as mouse (clicking) inputs to close the window. The system should output the randomised words that are for the typing test, and colour/highlight each letter when an input is received. After the typing test is completed, the system should output the statistics of the test (words per minute, how many words typed, and how much time it took for them to type it) and have a restart button at all times to either reset the run or the words.
+
 - **Core Features**
     - At its core, what specifically does the program need to be able to do?
+
+The program needs to receive the inputs from the user, check if they are right, if not then there is a output (highlight of wrong letter) where the user needs to and at the end, needs to calculate the speed that the user typed.
 
 - **User Interaction**
     - How will users interact with the system (e.g. command-line, GUI?) and what information will it need to provide to help users navigate?
 
+The user will interact with the system through an advanced GUI that is easy to navigate, with many buttons and text outputs to make it easier to use. A READ.ME file is attached with the program and it provides steps on how to use the typing speed test.
+
 - **Error Handling**
     - What possible errors could you face that need to be handled by the system?
+
+Possible errors faced could be related to the API (dictionary) that is used by the system to provide randomised words for the typing test. Other errors could be something to do with the numbers being too long (wpm) which can be resolved by getting the result to round up or down. The system could also face calculation errors when it is calculating the wpm or processing the data.
 
 ### **Non-Functional Specifications**
 - **Performance**
