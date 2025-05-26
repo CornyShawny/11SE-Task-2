@@ -66,11 +66,17 @@ Possible errors faced could be related to the API (dictionary) that is used by t
 - **Performance**
     - How quickly should we try to get the system to perform tasks, what efficiency is required to maintain user engagement? How can we ensure our program remains efficient?
 
+The system should perform tasks almost instantly, like updating the "Words Typed: " amount in real-time. This fast system response is required to maintain user engagement. The program can be ensured to be efficient by simplifying and correctly formatting code.
+
 - **Useability / Accessibility**
     - How might you make your application more accessible? What could you do with the User Interface to improve usability?
 
+To make the application more accessible, there could be options to change the font size, the font, or the highlight/font colours to improve visibility. To make the User Interface easier to use, the buttons should be clear and labelled to improve visibility as well.
+
 - **Reliability**
     - What could perhaps not crash the whole system, but could be an issue and needs to be addressed? Data integrity? Illogical calculation? Menu navigation going to wrong places?
+
+
 
 ### **Use Case**
 A use case in software development is a structured description of how a user (or system) interacts with a software application to achieve a specific goal. It defines:
