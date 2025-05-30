@@ -76,22 +76,38 @@ To make the application more accessible, there could be options to change the fo
 - **Reliability**
     - What could perhaps not crash the whole system, but could be an issue and needs to be addressed? Data integrity? Illogical calculation? Menu navigation going to wrong places?
 
-
+Issues could include the inaccurate calculation of the wpm, the wpm being too long in decimals, or illogical calculation (words typed divided by 0 minutes). There could also be an issue when receiving the inputs from the user. These problems should be resolved and tested to ensure the reliability of the system.
 
 ### **Use Case**
 A use case in software development is a structured description of how a user (or system) interacts with a software application to achieve a specific goal. It defines:
 
-- Actors: Who interacts with the system (e.g., user, external system).
+**Actors:**
 
-- Preconditions: Conditions that must be met before the use case starts.
+User (person who wants to test their typing speed)
 
-- Main Flow: The step-by-step process of how the interaction occurs.
+**Preconditions:**
 
-- Alternative Flows (if needed): Variations or exceptions to the main flow.
+The application needs to be open and running, with the randomised words for the test loaded.
 
-- Postconditions: The expected outcome or result after the use case is completed.
+**Main Flow:**
+1. The user opens the application
+2. They select the configurations for the test.
+3. They start typing after the words are loading.
+4. The system collects the data from the typing and calculates the analytics.
+5. After the user finishes, the data gathered from the test is displayed.
+
+**Postconditions:**
+
+The user is given results on their test, and is met with two buttons which either restart or exit the test.
 
 ## **Design**
+### **Storyboard**
+![Alt text](Images/Storyboard.png)
+
+### **Data Flow Diagram: Level 0**
+![Alt text](Images/Level0DFD.png)
+
+### **Data Flow Diagram: Level 1**
 
 ## **Build and Test**
 
