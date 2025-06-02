@@ -108,6 +108,10 @@ The user is given results on their test, and is met with two buttons which eithe
 ![Alt text](Images/Level0DFD.png)
 
 ### **Data Flow Diagram: Level 1**
+![Alt text](Images/Level1DFD.png)
+
+### **Gantt Chart**
+![Alt text](Images/Gantt%20Chart.png)
 
 ## **Build and Test**
 
