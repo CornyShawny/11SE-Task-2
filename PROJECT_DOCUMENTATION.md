@@ -114,14 +114,93 @@ The user is given results on their test, and is met with two buttons which eithe
 ![Alt text](Images/Gantt%20Chart.png)
 
 ## **Build and Test**
+```
+import tkinter as tk
+from tkinter import ttk
+import ttkbootstrap as tb # theme for tkinter
 
+root = tb.Window(themename="cyborg") # theme for tkinter
+root.title("Typing Speed Test") # window title
+root.geometry("1920x1080") # window size
+
+# title within the window
+title = tb.Label(
+    root,
+    text = "Typing Speed Test",
+    font = ("System", 48, "bold"),
+    bootstyle = "light"
+)
+title.pack(pady=10)
+
+# subheading welcoming the user to the app
+subheading = tb.Label(
+    root,
+    text = "Welcome to the Typing Speed Test!!!",
+    font = ("System", 32),
+    bootstyle = "light"
+)
+subheading.pack(pady=10)
+
+# subheading asking how many words for the test
+howmanywords = tb.Label(
+    root,
+    text = "How many words?",
+    font = ("System", 24),
+    bootstyle = "light"
+)
+howmanywords.pack(pady=5)
+
+# choices for word count
+wordcountchoices = ["10", "25", "50", "100"]
+
+# dropdown box to select word count
+wordcount = ttk.Combobox(root, values = wordcountchoices)
+wordcount.set("Select an option")
+wordcount.pack(pady=10)
+
+'''
+function for selecting word count and outputting the choice into the console
+'''
+def on_select():
+    selected_option = wordcount.get()
+    print(f"You selected: {selected_option}")
+
+# submit button to submit chosen word count
+submit = tb.Button(root, text="Submit", command=on_select)
+submit.pack(pady=10)
+
+root.mainloop()
+```
 ## **Review**
+### **End of Sprint Review Questions**
+- **Evaluate how effectively your project meets the functional and non-functional requirements defined in your planning.**
+    - Refer to specific criteria or expectations outlined in your requirements document.
+
+As of right now, my project is a GUI that contains a dropdown box which lets the user select how many words they want to test, and there is also a submit button for users to submit their choice. These features partly fulfill my functional and non-functional requirements.
+
+- **Analyse the performance of your program against the key use-cases you identified.**
+    - Discuss whether the program behaves as expected and handles input/output as planned.
+
+The program works well and behaves as expected, but as the program just includes the simple GUI, the use cases are only partly fulfilled.
+
+- **Assess the quality of your code in terms of readability, structure, and maintainability.**
+    - Consider naming conventions, use of functions, comments, and overall organisation.
+
+For my code, it is well organised and readable as it has code comments and docstrings, but right now it is pretty simple.
+
+- **Explain the improvements that should be made in the next stage of development.**
+    - Include both feature enhancements and refinements to code quality or structure.
+
+The next improvements for my code would be to develop further and add more features to both the code and GUI such as generating words, being able to do the test and recieve inputs, and calculating the wpm.
 
 ## **Launch**
 
 # **Sprint 2**
 ## **Design**
+### **Structure Charts**
+![Alt text](Images/Structure%20Chart.png)
 
+### **Algorithms**
 ## **Build and Test**
 
 ## **Review**

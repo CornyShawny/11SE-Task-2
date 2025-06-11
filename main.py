@@ -53,3 +53,5 @@ submit = tb.Button(root, text="Submit", command=on_select)
 submit.pack(pady=10)
 
 root.mainloop()
+
+# add highscore (WPM)
