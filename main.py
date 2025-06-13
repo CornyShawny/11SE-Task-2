@@ -1,10 +1,31 @@
 import tkinter as tk
 from tkinter import ttk
 import ttkbootstrap as tb # theme for tkinter
+from timeit import default_timer as timer
+import random
 
-root = tb.Window(themename="cyborg") # theme for tkinter
-root.title("Typing Speed Test") # window title
-root.geometry("1920x1080") # window size
+class SpeedTypingTest:
+    def __init__(self, root):
+        """Initialise the main game window and variables."""
+        self.root = tb.Window(themename="cyborg") # theme for tkinter
+        self.root.title("Typing Speed Test") # window title
+        self.root.geometry("1920x1080") # window size
+        pass
+    
+    def setup_ui(self):
+        """Set up the UI components such as labels, buttons, and text entry field."""
+        
+        pass
+    
+    def check_result(self):
+        """Compare the user's input with the expected sentence and calculate the WPM."""
+        pass
+    
+    def reset_test(self):
+        """Reset the test with a new sentence and restart the timer."""
+        pass
+
+
 
 # title within the window
 title = tb.Label(

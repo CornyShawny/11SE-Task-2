@@ -194,13 +194,47 @@ For my code, it is well organised and readable as it has code comments and docst
 The next improvements for my code would be to develop further and add more features to both the code and GUI such as generating words, being able to do the test and recieve inputs, and calculating the wpm.
 
 ## **Launch**
+### **README.md**
+```
+# Typing Speed Test
 
+This Python program allows you to test your typing speed with a test. You can choose how ever many words you want, and the program will generate the chosen amount in random words, which then you have to type all of them to finish the test. This program uses 'ttkbootstrap' for tkinter themes.
+
+## Features
+- Able to choose your desired amount of words
+- Generates random words
+- Tests your typing speed
+- Processes and displays your test results (wpm, time taken, words typed etc.)
+
+## Requirements
+To run this program, you need to install the following dependencies:
+
+- `ttkbootstrap` for tkinter themes
+
+### Install dependencies
+To install the required dependencies, you can run:
+
+```bash
+pip install -r requirements.txt
+```
+### **requirements.txt**
+```
+ttkbootstrap
+```
 # **Sprint 2**
 ## **Design**
-### **Structure Charts**
+### **Structure Chart**
 ![Alt text](Images/Structure%20Chart.png)
 
 ### **Algorithms**
+
+### **Pseudocode**
+```
+BEGIN root.main(loop)
+
+```
+### **Flowcharts**
+
 ## **Build and Test**
 
 ## **Review**
