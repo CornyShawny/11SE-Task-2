@@ -177,6 +177,7 @@ ttkbootstrap
 
 ### **Pseudocode**
 #### **root.mainloop()**
+```
 BEGIN root.mainloop()
     WHILE application running DO
         WAIT for user interaction
@@ -191,6 +192,7 @@ BEGIN root.mainloop()
         END IF
     END WHILE
 END root.mainloop()
+```
 
 END root.mainloop()
 #### **generate_words()**
