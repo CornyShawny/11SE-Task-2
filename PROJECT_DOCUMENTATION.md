@@ -143,6 +143,86 @@ root.mainloop()
 ## **Launch**
 ### **README.md**
 ```
+# Typing Speed Test
+
+This Python program allows you to test your typing speed with a test. You can choose how ever many words you want, and the program will generate the chosen amount in random words, which then you have to type all of them to finish the test. This program uses 'ttkbootstrap' for tkinter themes.
+
+## Features
+- Able to choose your desired amount of words
+- Generates random words
+- Tests your typing speed
+- Processes and displays your test results (wpm, time taken, words typed etc.)
+
+## Requirements
+To run this program, you need to install the following dependencies:
+
+- `ttkbootstrap` for tkinter themes
+
+### Install dependencies
+To install the required dependencies, you can run:
+
+```bash
+pip install -r requirements.txt
+```
+
+### **requirements.txt**
+```
+ttkbootstrap
+```
+
+# **Sprint 2**
+## **Design**
+### **Structure Chart**
+![Alt text](Images/Structure%20Chart.png)
+
+### **Pseudocode**
+#### **root.mainloop()**
+BEGIN root.mainloop()
+    WHILE application running DO
+        WAIT for user interaction
+        IF user types number of words AND clicks "Generate Words" THEN
+            generate_words()
+        ELSE IF user clicks "Submit" THEN
+            end_typing()
+        ELSE IF user clicks "Exit" THEN
+            root.quit()
+        ELSE IF user presses a key in text box AND timer not started THEN
+            start_typing()
+        END IF
+    END WHILE
+END root.mainloop()
+
+END root.mainloop()
+#### **generate_words()**
+```
+BEGIN generate_words()
+    GET number of words from wordcount field
+    IF number of words is valid THEN
+        SELECT number of words from WORDS at random
+        DISPLAY selected words on words_display
+        ENABLE text entry field
+        FOCUS on text entry
+    END IF
+END generate_words()
+```
+
+#### **end_typing()**
+```
+BEGIN end_typing()
+    IF timer has started THEN
+        CALCULATE elapsed_time from start_time
+        COUNT words typed by user
+        COMPUTE WPM = (word_count / elapsed_time) × 60
+        DISPLAY WPM
+        STOP timer
+    END IF
+END end_typing()
+```
+
+### **Flowcharts**
+
+## **Build and Test**
+```
 import tkinter as tk
 from tkinter import ttk
 import ttkbootstrap as tb # theme for tkinter
@@ -249,15 +329,43 @@ root.mainloop()
 
 ## **Review**
 ### **End of Sprint Review Questions**
-- **Evaluate how effectively your project meets the functional and non-functional requirements defined in your planning.** My program is mostly effective at meeting the functional and non-functional requirements from my planning. I have implemented the word generating, time ticking, wpm calculating, and some more buttons for these.
+- **Evaluate how effectively your project meets the functional and non-functional requirements defined in your planning.** My program is mostly effective at meeting the functional and non-functional requirements from my planning. I have implemented the word generating, time ticking, wpm calculating, and some more buttons to exit, generate words, and submit the typed words.
 
-- **Analyse the performance of your program against the key use-cases you identified.** 
+- **Analyse the performance of your program against the key use-cases you identified.** The program works well and mostly meets the use cases, though it still needs to be refined as it is not perfect yet.
 
-- **Assess the quality of your code in terms of readability, structure, and maintainability.** 
+- **Assess the quality of your code in terms of readability, structure, and maintainability.** My code is easy to read as there are docstrings and comments for most of the code, and the structure is ordered well with lines to seperate different parts of the code. I believe the names of my variables are fine as of right now but might need changing in the future to avoid overlapping.
 
-- **Explain the improvements that should be made in the next stage of development.** 
+- **Explain the improvements that should be made in the next stage of development.** The improvements that should be made would probably be some usability and accessibility features like being able to press enter after finishing typing instead of the submit button, or something like a scroll bar if the amount of words gets too much. Another big feature to add would be a highscore or an accuracy test for the typing test to check the percentage accuracy of what the user has typed.
 
 ## **Launch**
+### **README.md**
+```
+# Typing Speed Test
+
+This Python program allows you to test your typing speed with a test. You can choose how ever many words you want, and the program will generate the chosen amount in random words, which then you have to type all of them to finish the test. This program uses 'ttkbootstrap' for tkinter themes.
+
+## Features
+- Able to choose your desired amount of words
+- Generates random words
+- Tests your typing speed
+- Processes and displays your test results (wpm, time taken, words typed etc.)
+
+## Requirements
+To run this program, you need to install the following dependencies:
+
+- `ttkbootstrap` for tkinter themes
+
+### Install dependencies
+To install the required dependencies, you can run:
+
+```bash
+pip install -r requirements.txt
+```
+
+### **requirements.txt**
+```
+ttkbootstrap
+```
 
 # **Sprint 3**
 ## **Design**
