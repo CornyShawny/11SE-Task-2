@@ -197,7 +197,7 @@ END root.mainloop()
 ```
 BEGIN generate_words()
     GET word count
-    IF valid:
+    IF valid THEN
         SELECT that amount of random words
         DISPLAY selected words
         ENABLE text input
@@ -209,7 +209,7 @@ END generate_words()
 #### **end_typing()**
 ```
 BEGIN end_typing()
-    IF timer running:
+    IF timer running THEN
         CALCULATE time elapsed
         COUNT typed words
         wpm = (words / time) × 60
@@ -220,6 +220,12 @@ END end_typing()
 ```
 
 ### **Flowcharts**
+#### **root.mainloop()**
+![alt text](Images/root.mainloop().png)
+
+#### **generate_words()**
+
+#### **end_typing()**
 
 ## **Build and Test**
 ```
