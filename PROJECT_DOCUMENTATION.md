@@ -179,45 +179,43 @@ ttkbootstrap
 #### **root.mainloop()**
 ```
 BEGIN root.mainloop()
-    WHILE application running DO
-        WAIT for user interaction
-        IF user types number of words AND clicks "Generate Words" THEN
+    WHILE app is running
+        IF user enters word count AND clicks "Generate Words" THEN
             generate_words()
-        ELSE IF user clicks "Submit" THEN
+        ELSEIF user clicks "Submit" THEN
             end_typing()
-        ELSE IF user clicks "Exit" THEN
-            root.quit()
-        ELSE IF user presses a key in text box AND timer not started THEN
+        ELSEIF user clicks "Exit" THEN
+            quit app
+        ELSEIF user starts typing AND timer not running THEN
             start_typing()
-        END IF
-    END WHILE
+        ENDIF
+    ENDWHILE
 END root.mainloop()
 ```
 
-END root.mainloop()
 #### **generate_words()**
 ```
 BEGIN generate_words()
-    GET number of words from wordcount field
-    IF number of words is valid THEN
-        SELECT number of words from WORDS at random
-        DISPLAY selected words on words_display
-        ENABLE text entry field
-        FOCUS on text entry
-    END IF
+    GET word count
+    IF valid:
+        SELECT that amount of random words
+        DISPLAY selected words
+        ENABLE text input
+        FOCUS text input
+    ENDIF
 END generate_words()
 ```
 
 #### **end_typing()**
 ```
 BEGIN end_typing()
-    IF timer has started THEN
-        CALCULATE elapsed_time from start_time
-        COUNT words typed by user
-        COMPUTE WPM = (word_count / elapsed_time) × 60
-        DISPLAY WPM
+    IF timer running:
+        CALCULATE time elapsed
+        COUNT typed words
+        wpm = (words / time) × 60
+        DISPLAY wpm
         STOP timer
-    END IF
+    ENDIF
 END end_typing()
 ```
 

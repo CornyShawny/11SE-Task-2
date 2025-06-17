@@ -64,9 +64,9 @@ def update_timer():
     """updates the timer label every 100ms"""
     global start_time, running_timer
     if start_time:
-        elapsed_time = timer() - start_time  # calculate run time
-        time.config(text=f"Time: {elapsed_time:.1f} sec")  # update display
-        running_timer = root.after(100, update_timer)  # update every 100ms
+        elapsed_time = timer() - start_time # calculate run time
+        time.config(text=f"Time: {elapsed_time:.1f} sec") # update display
+        running_timer = root.after(100, update_timer) # update every 100ms
 
 def start_typing(event=None):
     """starts the timer when user begins typing"""
@@ -74,15 +74,16 @@ def start_typing(event=None):
     if start_time is None: # makes sure timer only starts once
         start_time = timer()
         update_timer()
+# FIX RESTARTING TIMER NOT WORKING
 
 def end_typing():
     """calculate and display words per minute (WPM) when user submits"""
     global start_time, running_timer
     if start_time:
         elapsed_time = timer() - start_time  # total typing duration
-        wpm = round(len(text_entry.get().split()) / (elapsed_time / 60))  # calculate WPM
-        results.config(text=f"Your speed: {wpm} WPM")  # display results
-        root.after_cancel(running_timer)  # stop the timer
+        wpm = round(len(text_entry.get().split()) / (elapsed_time / 60)) # calculate WPM
+        results.config(text=f"Your speed: {wpm} WPM") # display results
+        root.after_cancel(running_timer) # stop the timer
 
 # buttons
 generate = tb.Button(root, text="Generate Words", command=generate_words, bootstyle="success")
