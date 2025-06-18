@@ -56,7 +56,7 @@ class Function(Base):
         if self.get_start_time():
             elapsed_time = timer() - self.get_start_time() # calculate elapsed time
             wpm = round(len(ui.text_entry.get().split()) / (elapsed_time / 60)) # calculate wpm
-            ui.results_label.config(text=f"Your speed: {wpm} WPM") # display wpm results
+            ui.result_label.config(text=f"Your speed: {wpm} WPM") # display wpm results
 
             if self._running_timer:
                 ui.root.after_cancel(self._running_timer) # stop timer
