@@ -64,9 +64,9 @@ class Function(Base):
 
     def generate_words(self, ui):
             """generates and displays random set of words"""
-            num_words = int(ui.wordcount.get()) if ui.wordcount.get().isdigit() else 0 # ensure input valid
+            num_words = int(ui.word_count.get()) if ui.word_count.get().isdigit() else 0 # ensure input valid
             if num_words:
-                ui.words_display.config(text=" ".join(random.choices(WORDS, k=num_words))) # select words
+                ui.word_display.config(text=" ".join(random.choices(WORDS, k=num_words))) # select words
                 ui.text_entry.config(state="normal") # enable text entry
                 ui.text_entry.delete(0, tk.END) # clear previous entry
                 ui.text_entry.focus() # focus on text box
@@ -123,7 +123,7 @@ class UI:
         self.generate.pack(pady=5)
 
         # generate words using "enter" key instead of the button
-        self.wordcount.bind("<Return>", lambda event: self.logic.generate_words(self))
+        self.word_count.bind("<Return>", lambda event: self.logic.generate_words(self))
 
         # submit button
         self.submit = tb.Button(root, text="Submit", command=lambda: self.logic.calculate_wpm(self), bootstyle="danger")
