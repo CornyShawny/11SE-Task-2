@@ -224,8 +224,10 @@ END end_typing()
 ![alt text](Images/root.mainloop().png)
 
 #### **generate_words()**
+![alt text](Images/generate_words().png)
 
 #### **end_typing()**
+![alt text](Images/end_typing().png)
 
 ## **Build and Test**
 ```
