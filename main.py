@@ -28,7 +28,6 @@ class Base:
         """setter method for updating start time"""
         self._start_time = value
 
-
 class Function(Base):
     """functions for the typing test"""
     def __init__(self):
@@ -71,7 +70,6 @@ class Function(Base):
                 ui.text_entry.delete(0, tk.END) # clear previous entry
                 ui.text_entry.focus() # focus on text box
                 self.reset_timer(ui) # reset timer when generating new words
-
 
 class UI:
     """all the ui for the typing test"""
