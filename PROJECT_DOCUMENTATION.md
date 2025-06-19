@@ -377,6 +377,8 @@ ttkbootstrap
 
 # **Sprint 3**
 ## **Design**
+### **UML Class Diagram**
+![alt text](Images/UMLClassDiagram.png)
 
 ## **Build and Test**
 ```
