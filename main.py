@@ -1,12 +1,16 @@
 import tkinter as tk
 from tkinter import ttk
+from tkinter import messagebox
 import ttkbootstrap as tb # theme for tkinter
 from timeit import default_timer as timer
 import random
 
 # word pool for the typing test
 with open("words.txt") as f:
-    WORDS = f.read().split()
+    words = f.read().split()
+
+# word limit for word count
+word_limit = 150
 
 class Base:
     """base class to share"""
@@ -56,20 +60,46 @@ class Function(Base):
         if self.get_start_time():
             elapsed_time = timer() - self.get_start_time() # calculate elapsed time
             wpm = round(len(ui.text_entry.get().split()) / (elapsed_time / 60)) # calculate wpm
-            ui.result_label.config(text=f"Your speed: {wpm} WPM") # display wpm results
+            accuracy = self.calculate_accuracy(ui) # calculate accuracy
+
+            ui.wpm_label.config(text=f"Your speed: {wpm} WPM") # display wpm results
+            ui.accuracy_label.config(text=f"Accuracy: {accuracy}%") # display accuracy results
 
             if self._running_timer:
                 ui.root.after_cancel(self._running_timer) # stop timer
 
     def generate_words(self, ui):
             """generates and displays random set of words"""
-            num_words = int(ui.word_count.get()) if ui.word_count.get().isdigit() else 0 # ensure input valid
-            if num_words:
-                ui.word_display.config(text=" ".join(random.choices(WORDS, k=num_words))) # select words
-                ui.text_entry.config(state="normal") # enable text entry
-                ui.text_entry.delete(0, tk.END) # clear previous entry
-                ui.text_entry.focus() # focus on text box
-                self.reset_timer(ui) # reset timer when generating new words
+            try:
+                num_words = int(ui.word_count.get())
+                if num_words <= 0:
+                    raise ValueError("Word count must be positive.")
+                if num_words > word_limit:
+                    messagebox.showwarning("Word Limit Exceeded", f"Maximum allowed is {word_limit} words.")
+                    return
+            except ValueError:
+                messagebox.showerror("Invalid Input", "Please enter a valid number of words.")
+                return
+            
+            ui.word_display.config(text=" ".join(random.choices(words, k=num_words))) # select words
+            ui.text_entry.config(state="normal") # enable text entry
+            ui.text_entry.delete(0, tk.END) # clear previous entry
+            ui.text_entry.focus() # focus on text box
+            self.reset_timer(ui) # reset timer when generating new words
+    
+    def calculate_accuracy(self, ui):
+        """calculates word accuracy as a percentage"""
+        original_words = ui.word_display.cget("text").split()
+        typed_words = ui.text_entry.get().split()
+
+        correct_words = sum(1 for o, t in zip(original_words, typed_words) if o == t)
+        total_words = len(original_words)
+        
+        if total_words == 0:
+            return 0.0 # avoid division by zero
+
+        accuracy = (correct_words / total_words) * 100
+        return round(accuracy, 1)
 
 class UI:
     """all the ui for the typing test"""
@@ -88,11 +118,11 @@ class UI:
 
         # word count prompt
         self.how_many_words = tb.Label(root, text="How many words?", font=("Century", 20), bootstyle="light")
-        self.how_many_words.pack(padx=5)
+        self.how_many_words.pack(pady=5)
 
         # entry box to input number of words
         self.word_count = ttk.Entry(root, font=("Century", 16))
-        self.word_count.pack(padx=10)
+        self.word_count.pack(pady=10)
         self.word_count.focus()
 
         # display generated words
@@ -113,8 +143,12 @@ class UI:
         self.time_label.pack(pady=5)
 
         # wpm result display
-        self.result_label = tb.Label(root, text="", font=("Century", 20), bootstyle="light")
-        self.result_label.pack(pady=5)
+        self.wpm_label = tb.Label(root, text="", font=("Century", 20), bootstyle="light")
+        self.wpm_label.pack(pady=5)
+
+        # accuracy result display
+        self.accuracy_label = tb.Label(root, text="", font=("Century", 20), bootstyle="light")
+        self.accuracy_label.pack(pady=5)
 
         # button to generate words
         self.generate = tb.Button(root, text="Generate Words", command=lambda: self.logic.generate_words(self), bootstyle="success")
@@ -129,7 +163,7 @@ class UI:
 
         # exit button
         self.exit = tb.Button(root, text="Exit", command=root.quit, bootstyle="danger")
-        self.exit.pack(pady=100)
+        self.exit.pack(pady=50)
 
         # fullscreen button
         self.fullscreen = tb.Button(root, text="Toggle Fullscreen", command=lambda: self.logic.toggle_fullscreen(self), bootstyle="primary")
@@ -146,5 +180,3 @@ class Main:
 root = tb.Window(themename="cyborg")
 app = Main(root)
 root.mainloop()
-
-# add highscore (WPM)
