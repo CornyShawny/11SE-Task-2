@@ -531,15 +531,16 @@ root.mainloop()
 
 # add highscore (WPM)
 ```
+
 ## **Review**
 ### **End of Sprint Review Questions**
-- **Evaluate how effectively your project meets the functional and non-functional requirements defined in your planning.** My project effectively meets all of the functional and non-functional requirements
+- **Evaluate how effectively your project meets the functional and non-functional requirements defined in your planning.** I have implemented OOP features into my code, basically a rewrite of my old code, therefore also including all features in the functional and non-functional requirements, such as the ui and display.
 
-- **Analyse the performance of your program against the key use-cases you identified.** 
+- **Analyse the performance of your program against the key use-cases you identified.** The program performs well and the output is as expected, but I have realised that if the number of generated words is too high, the words could flood the window, or crash the application, so I need to add some restrictions. Overall, the program works well, but there needs to be some changes and fixes. 
 
-- **Assess the quality of your code in terms of readability, structure, and maintainability.** 
+- **Assess the quality of your code in terms of readability, structure, and maintainability.** My code is well organised and very readable, and it is even better now with OOP implemented. The code includes docstrings and code comments to explain what that specific part of code does and what it's for.
 
-- **Explain the improvements that should be made in the next stage of development.** 
+- **Explain the improvements that should be made in the next stage of development.** The only improvements that should be made are to make small improvements like making the UI look better by rearranging the UI elements, changing the colours, or changing the size. I should also add error handling, and implement restrictions into the code.
 
 ## **Launch**
 
